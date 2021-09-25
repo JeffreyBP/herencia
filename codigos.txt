@@ -1,0 +1,69 @@
+class Children():
+
+  is_adult = False
+
+  def __init__(self, name, surname, age):
+    self.name = name
+    self.surname = surname
+    self.age = age
+
+  @property
+  def complete_name(self):
+    return "{} {}".format(self.name, self.surname)
+
+  @complete_name.setter
+  def complete_name(self, name_surname):
+    name, surname = name_surname.split(" ")
+    self.name = name
+    self.surname = surname
+
+
+
+
+class Adult():
+
+  is_adult = True
+
+  def __init__(self, name, surname, age):
+    self.name = name
+    self.surname = surname
+    self.age = age
+
+  @property
+  def complete_name(self):
+    return "{} {}".format(self.name, self.surname)
+
+  @complete_name.setter
+  def complete_name(self, name_surname):
+    name, surname = name_surname.split(" ")
+    self.name = name
+    self.surname = surname
+
+
+**************************************  H  E  R  E  N  C  I  A  **********************************************
+class Person(object):
+
+  def __init__(self, name, surname, age):
+    self.name = name
+    self.surname = surname
+    self.age = age
+
+  @property
+  def complete_name(self):
+    return "{} {}".format(self.name, self.surname)
+
+  @complete_name.setter
+  def complete_name(self, name_surname):
+    name, surname = name_surname.split(" ")
+    self.name = name
+    self.surname = surname
+
+************************
+class Children(Person):
+  is_adult = False
+
+************************
+class Adult(Person):
+  is_adult = True
+
+*************************
